@@ -635,7 +635,7 @@ export default function ConfigurationPage() {
             <div className="w-full h-full border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
           </div>
           <h2 className={`font-bold mb-4 ${getCurrentFontClass()}`}>
-            Thanks! I'm customizing your AccessWeb experience now...
+            Thanks! I&apos;m customizing your AccessWeb experience now...
           </h2>
         </div>
       </main>
