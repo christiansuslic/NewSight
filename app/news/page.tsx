@@ -1,5 +1,15 @@
 'use client';
 
+// Ensure SpeechRecognition is recognized by TypeScript
+declare global {
+  interface Window {
+    SpeechRecognition: any;
+    webkitSpeechRecognition: any;
+  }
+}
+
+type SpeechRecognition = any;
+
 import { useState, useEffect, useRef } from 'react';
 import { useAccessibilityStyles } from '../../hooks/useAccessibilityStyles';
 import { AccessibilityProfile, defaultProfile } from '../../types/accessibility';
@@ -67,13 +77,13 @@ export default function NewsPage() {
 
         recognition.onstart = () => setIsListening(true);
         recognition.onend = () => setIsListening(false);
-        recognition.onerror = (event) => {
+        recognition.onerror = (event: any) => {
           console.error('Speech recognition error:', event.error);
           setIsListening(false);
           setFeedbackMessage('Speech recognition error. Please try again.');
         };
 
-        recognition.onresult = (event) => {
+        recognition.onresult = (event: any) => {
           const result = event.results[0][0].transcript;
           processVoiceCommand(result);
         };

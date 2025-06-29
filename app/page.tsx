@@ -1,5 +1,15 @@
 'use client';
 
+// Ensure SpeechRecognition is recognized by TypeScript
+declare global {
+  interface Window {
+    SpeechRecognition: any;
+    webkitSpeechRecognition: any;
+  }
+}
+
+type SpeechRecognition = any;
+
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -100,7 +110,7 @@ export default function ConfigurationPage() {
 
         recognition.onstart = () => setIsListening(true);
         recognition.onend = () => setIsListening(false);
-        recognition.onerror = (event) => {
+        recognition.onerror = (event: any) => {
           console.error('Speech recognition error:', event.error);
           setIsListening(false);
           
@@ -116,7 +126,7 @@ export default function ConfigurationPage() {
           }
         };
 
-        recognition.onresult = (event) => {
+        recognition.onresult = (event: any) => {
           const result = event.results[0][0].transcript;
           processUserResponse(result);
         };
