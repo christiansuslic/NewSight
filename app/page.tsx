@@ -47,7 +47,7 @@ export default function ConfigurationPage() {
   const steps = [
     {
       id: 'colorAdjustments',
-      question: "Welcome to NewSight! I’m here to help you set up your news experience. Let's start by checking if you have any issues seeing certain colors?",
+      question: "Welcome to NewSight! I'm here to help you set up your news experience. Let's start by checking if you have any issues seeing certain colors?",
       type: 'toggle',
       key: 'colorAdjustments'
     },

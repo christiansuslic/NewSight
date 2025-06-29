@@ -645,9 +645,9 @@ User said: ${command}`;
                 <div className="text-2xl mb-2">📰</div>
                 <div className={`font-bold mb-1 ${getCurrentFontClass()}`}>News Summary</div>
                 <div className={`text-sm ${getCurrentFontClass()}`}>
-                  "What's new today?"<br/>
-                  "Tell me the news"<br/>
-                  "What's happening?"
+                  &quot;What&apos;s new today?&quot;<br/>
+                  &quot;Tell me the news&quot;<br/>
+                  &quot;What&apos;s happening?&quot;
                 </div>
               </div>
               
@@ -655,9 +655,9 @@ User said: ${command}`;
                 <div className="text-2xl mb-2">🔢</div>
                 <div className={`font-bold mb-1 ${getCurrentFontClass()}`}>Read by Number</div>
                 <div className={`text-sm ${getCurrentFontClass()}`}>
-                  "Read article 1"<br/>
-                  "Read the first article"<br/>
-                  "Read article number 2"
+                  &quot;Read article 1&quot;<br/>
+                  &quot;Read the first article&quot;<br/>
+                  &quot;Read article number 2&quot;
                 </div>
               </div>
               
@@ -665,16 +665,16 @@ User said: ${command}`;
                 <div className="text-2xl mb-2">🔍</div>
                 <div className={`font-bold mb-1 ${getCurrentFontClass()}`}>Read by Topic</div>
                 <div className={`text-sm ${getCurrentFontClass()}`}>
-                  "Read the sports article"<br/>
-                  "Tell me about politics"<br/>
-                  "Article about technology"
+                  &quot;Read the sports article&quot;<br/>
+                  &quot;Tell me about politics&quot;<br/>
+                  &quot;Article about technology&quot;
                 </div>
               </div>
             </div>
           </div>
 
           <p className={`mt-4 text-sm ${getCurrentFontClass()}`}>
-            You can also say: "Make text bigger" • "High contrast" • "Use simple language"
+            You can also say: &quot;Make text bigger&quot; • &quot;High contrast&quot; • &quot;Use simple language&quot;
           </p>
 
           {feedbackMessage && (
