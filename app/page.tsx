@@ -215,7 +215,10 @@ export default function ConfigurationPage() {
     } else if (stepKey === 'contrastMode') {
       const shouldEnable = classification.includes('ENABLE');
       setProfile(prev => {
-        const newProfile = { ...prev, contrastMode: shouldEnable ? 'high' : 'none' };
+        const newProfile: AccessibilityProfile = { 
+          ...prev, 
+          contrastMode: shouldEnable ? 'high' : 'none' 
+        };
         console.log('Updated contrastMode profile:', newProfile);
         return newProfile;
       });
