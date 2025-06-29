@@ -146,7 +146,7 @@ Respond with only the action name (e.g., "GET_NEWS" or "NONE"). If it's READ_ART
               // Parse the simplified articles list
               const simplifiedLines = simplifiedArticlesList.split('\n').filter(line => line.trim().match(/^\d+\./));
               
-              articlesForSummary = simplifiedLines.slice(0, 3).map((line, index) => {
+              articlesForSummary = simplifiedLines.slice(0, 3).map((line: string, index: number) => {
                 const cleanLine = line.replace(/^\d+\.\s*/, '').trim();
                 const [title, ...descParts] = cleanLine.split(' - ');
                 return {
@@ -199,7 +199,7 @@ Respond with only the action name (e.g., "GET_NEWS" or "NONE"). If it's READ_ART
             }
           } else {
             // Use original article content
-            articlesForSummary = top3Articles.map(article => ({
+            articlesForSummary = top3Articles.map((article: { title: string; description: string }) => ({
               title: article.title,
               description: article.description
             }));
@@ -227,7 +227,7 @@ CRITICAL REQUIREMENTS:
 8. ${isSimplifiedMode ? 'Remember: Use ONLY simple words that a 5th grader would understand. No complex terms.' : ''}
 
 Today's top 3 news stories:
-${articlesForSummary.map((article, index) => 
+${articlesForSummary.map((article: { title: string; description: string }, index: number) => 
   `${index + 1}. ${article.title} - ${article.description}`
 ).join('\n')}
 
@@ -396,7 +396,7 @@ Be friendly, helpful, and always mention relevant accessibility features when ap
       response: responseText,
       audioUrl: audioUrl,
       conversationId: finalConversationId,
-      action: actionData,
+      action: actionData || undefined,
       ttsAvailable: ttsAvailable
     };
 
