@@ -161,7 +161,7 @@ Respond with only the action name (e.g., "GET_NEWS" or "NONE"). If it's READ_ART
               console.log('No simplified content found in message, simplifying original articles...');
               
               articlesForSummary = await Promise.all(
-                top3Articles.map(async (article: { title: string }) => {
+                top3Articles.map(async (article: { title: string; description: string }) => {
 
                   try {
                     // Simplify title
