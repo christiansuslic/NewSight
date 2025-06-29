@@ -126,7 +126,7 @@ Respond with only the action name (e.g., "GET_NEWS" or "NONE"). If it's READ_ART
           
           console.log('=== NEWS_SUMMARY EXECUTION ===');
           console.log('Number of articles fetched:', articles.length);
-            console.log('Top 3 articles for summary:', top3Articles.map((a: { title: string }) => a.title));
+          console.log('Top 3 articles for summary:', top3Articles.map((a: { title: string }) => a.title));
           
           // CRITICAL FIX: Check if simplified mode is enabled from the message context
           const isSimplifiedMode = message.includes('IMPORTANT: User has simplified language mode enabled');
@@ -161,7 +161,8 @@ Respond with only the action name (e.g., "GET_NEWS" or "NONE"). If it's READ_ART
               console.log('No simplified content found in message, simplifying original articles...');
               
               articlesForSummary = await Promise.all(
-                top3Articles.map(async (article) => {
+                top3Articles.map(async (article: { title: string }) => {
+
                   try {
                     // Simplify title
                     const titleResponse = await fetch(`${request.nextUrl.origin}/api/simplify`, {
